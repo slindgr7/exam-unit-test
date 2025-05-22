@@ -5,9 +5,23 @@
 // 4. refactor as neccessary before you move on to the next
 // 5. repeat
 
+function isProduct(maybeProduct) {
+    if (typeof maybeProduct !== 'object' || maybeProduct === null ) {
+        return false
+    } else if (
+        typeof maybeProduct.id !== 'number' || 
+        typeof maybeProduct.name !== 'string' || 
+        typeof maybeProduct.price !== 'number'
+    ) {
+        return false
+    }
+    return true
+}
+
+
+
 function isCartItem(maybeCartItem) {}
 
-function isProduct(maybeProduct) {}
 
 
 export { isCartItem, isProduct }

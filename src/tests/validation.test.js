@@ -16,14 +16,41 @@ const exampleCartObject = {
 //A2. Om produkten inte är ett objekt, returnera false
 //A3. Om produkten är ett objekt men saknar giltig egenskap, returnera false 
 
-describe('Validation', () => {
+describe('isProduct', () => {
 		test('Om produkten är ett objekt, retunera true', () => {
 				const input = exampleProduct
 				const expected = true
 				const actual = isProduct(input)
 				expect(actual).toBe(expected)
 
-	})
+		});
+
+		//täck alla utfall där det inte är ett objekt.
+		const objCases = [
+			[false, 'är inte ett objekt'],
+			[false, null],
+			[false, 0]
+		];
+
+		test.each(objCases)('Om produkten inte är ett objekt, returnera false', (expected, input) => {
+				const actual = isProduct(input)
+				expect(actual).toBe(expected)
+		});
+
+		//täck alla utfall där en giltig egenskap saknas/tomt objekt.
+		const objIncorrect = [
+			[{}],
+			[{ name: 'Badanka', price: 500}],
+			[{ id: 1001, price: 500}],
+			[{ id: 1001, name: 'Badanka'}]
+		];
+
+		test.each(objIncorrect)('Om produkten är ett objekt men saknar giltig egenskap, returnera false', (input) => {
+			expect(isProduct(input)).toBe(false)
+		});
+
+})
+
 
 
 	// Använd en "test" eller "it" (de är synonymer) för varje testfall
@@ -44,4 +71,3 @@ describe('Validation', () => {
 
 	// 3. it returns true for a valid product
 	// 4. it returns false for invalid cart objects
-})
