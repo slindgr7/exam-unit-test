@@ -11,9 +11,20 @@ const exampleCartObject = {
 	amount: 1,
 	item: exampleProduct
 }
+//isProduct
+//A1. Om produkten är ett objekt, retunera true
+//A2. Om produkten inte är ett objekt, returnera false
+//A3. Om produkten är ett objekt men saknar giltig egenskap, returnera false 
 
-// Group tests using "describe"
 describe('Validation', () => {
+		test('Om produkten är ett objekt, retunera true', () => {
+				const input = exampleProduct
+				const expected = true
+				const actual = isProduct(input)
+				expect(actual).toBe(expected)
+
+	})
+
 
 	// Använd en "test" eller "it" (de är synonymer) för varje testfall
 	/* Exempel på syntax:
