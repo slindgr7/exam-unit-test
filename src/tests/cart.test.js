@@ -1,6 +1,6 @@
 // importera här
-
 import { addToCart, getCartItemCount } from "../cart"
+
 
 describe('Cart', () => {
 	beforeEach(() => {
@@ -18,6 +18,7 @@ describe('Cart', () => {
 		const input = { id: 1002, name: 'Vattenpistol', price: 40 }
 
 		// addToCart returnerar inget - den påverkar kundvagnen
+		// vi behöver använda getCartItemCount för att se om det har lagts till en ny produkt i kundvagnen
 		addToCart(input)
 		const itemCountAfter = getCartItemCount()
 

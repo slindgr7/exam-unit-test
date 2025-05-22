@@ -67,7 +67,7 @@ För G ska du
 + skriva testfall för alla funktioner.
 
 För VG ska du
-+ skriva testfall som täcker in alla ekvivalensklasser
++ skriva testfall som täcker in alla ekvivalensklasser,
 + ha testfall som fångar errors: `expect(..).toThrow(..)`
 
 

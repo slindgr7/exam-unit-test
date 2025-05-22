@@ -25,8 +25,8 @@ let idCounter = 2002
 
 
 // Din kod börjar här
-
 // Du får en funktion att börja med
+
 function getCartItemCount() {
 	throw new Error('TODO')
 }
