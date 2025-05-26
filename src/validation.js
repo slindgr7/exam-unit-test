@@ -18,9 +18,18 @@ function isProduct(maybeProduct) {
     return true
 }
 
-
-
-function isCartItem(maybeCartItem) {}
+function isCartItem(maybeCartItem) {
+    if (typeof maybeCartItem !== "object" || maybeCartItem === null) {
+    return false;
+    } else if (
+        typeof maybeCartItem.id !== "number" ||
+        typeof maybeCartItem.amount !== "number" ||
+        typeof maybeCartItem.item !== "object" 
+    ) {
+        return false;
+    }
+    return true;
+}
 
 
 
