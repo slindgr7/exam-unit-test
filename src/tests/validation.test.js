@@ -12,7 +12,7 @@ const exampleCartObject = {
 	item: exampleProduct
 }
 
-//isProduct
+
 //A1. Om produkten är ett objekt, retunera true
 //A2. Om produkten inte är ett objekt, returnera false
 //A3. Om produkten är ett objekt men saknar giltig egenskap, returnera false 
@@ -52,7 +52,7 @@ describe('isProduct', () => {
 
 });
 
-//isCartItem
+
 //A1. Om varukorgen är ett objekt med alla giltiga egenskaper, returnera true
 //A2. Om varukorgen inte är ett objekt, returnera false
 //A3. Om varukorgen är ett objekt men saknar giltig egenskap, returnera false
@@ -84,8 +84,10 @@ describe('isCartItem', () => {
 			[{ id: 2001, amount: 1}]
 		]
 
-		test.each(incorrectCartObj)('Om varukorgen är ett objekt men saknar giltig egenskap, returnera false', () => {
-			expect(isCartItem(input)).toBe(false)
+		test.each(incorrectCartObj)('Om varukorgen är ett objekt men saknar giltig egenskap, returnera false', (input) => {
+
+		expect(isCartItem(input)).toBe(false)
+		
 		});
 })
 
